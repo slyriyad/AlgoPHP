@@ -5,4 +5,3 @@
 
 <?php
 
-$phrase = "Notre formation DL commence aujourd'hui";
