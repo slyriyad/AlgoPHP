@@ -1,7 +1,15 @@
 <h1>Exercice 11</h1>
 
-<p>Ecrire un algorithme permettant de calculer un montant de facture à régler à partir de la quantité 
-d’articles, son prix hors taxe et un taux de TVA (exprimé en décimal. Ex : 20 % -> 0.2)</p>
+<p>Initialiser un tableau de x marques de voitures. Ecrire un algorithme permettant de parcourir ce
+tableau et d’en afficher le contenu (une marque de voiture par ligne). Il est également demandé
+d’afficher le nombre de marques de voitures présentes dans le tableau.</p>
 
 <?php
 
+$marques = ["Peugeot","Renault","BMW","Mercedes"];
+$taillemarques = count($marques);
+echo "Il y a $taillemarques marques de voitures dans le tableau :"."<br>";
+
+for($i = 0; $i <= $taillemarques - 1 ; $i++) {
+    echo "<ul><li>"."$marques[$i]"."</li></ul>";
+}
