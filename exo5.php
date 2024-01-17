@@ -7,6 +7,6 @@ Attention, la valeur générée devra être arrondie à 2 décimales.</p>
 
 $francs = 100;
 $coefFrancs = 6.55957;
-$euro = $francs * $coefFrancs;
-echo "Montant en francs : $francs <br>" ;
-echo "100 francs =  .  $euro €";
+$euro = round($francs / $coefFrancs , 2);
+    echo "Montant en francs : $francs <br>" ;
+    echo "100 euro = $euro "."€";
