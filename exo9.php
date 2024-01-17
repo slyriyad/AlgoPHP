@@ -7,10 +7,10 @@ plus de 20 ans, alors celle-ci est imposable (sinon ce n’est pas le cas, « no
 <?php
 
 $age = 15;
-$sexe = "homme";
+$sexe = "femme";
 
 
-if(($sexe == "homme" && $age <= 20 )|| ($sexe == "femme" && $age <18  || $age >5 )){
+if(($sexe == "homme" && $age <= 20 )|| ($sexe == "femme" && $age <18  || $age >35 )){
     $resultat = "Non imposable";
     } else {
     $resultat = "Age : $age

@@ -5,15 +5,18 @@ d’articles, son prix hors taxe et un taux de TVA (exprimé en décimal. Ex : 2
 
 <?php
 
-$age = 10;
+$age = 5;
 
-if ($age >= 12) {
-    $resultat = "cadet";
-} elseif($age >= 10){
-    $resultat = "minime";
-} elseif($age >= 8){
-    $resultat = "pupille";
-} elseif($age >= 6){
-    $resultat = "poussin";
+if($age <= 6 || $age >= 12){
+    $resultat = "aucune catégorie";
 }
-echo "L’enfant qui a $age ans appartient à la catégorie $resultat";
+if ($age >= 12) {
+    $resultat = "la catégorie cadet";
+} elseif($age >= 10){
+    $resultat = "la catégorie minime";
+} elseif($age >= 8){
+    $resultat = "la catégorie pupille";
+} elseif($age >= 6){
+    $resultat = "la catégorie poussin";
+}
+echo "L’enfant qui a $age ans appartient à $resultat";
