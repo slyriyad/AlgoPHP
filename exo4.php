@@ -3,7 +3,7 @@
 <p>Ecrire un algorithme permettant de savoir si une phrase est palindrome.</p>
 
 <h1>resultat<h1> 
-
+<h2>Resultat</h2>
 <?php
 
 $phrase = "radars"; 
