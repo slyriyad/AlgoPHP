@@ -1,9 +1,9 @@
 <?php
-$a = array(1, 2, 3, 17);
 
-$i = 0; /* uniquement pour l'illustration */
-
-foreach ($a as $v) {
-    echo "\$a[$i] => $v.\n";
-    $i++;
+public function
+$etat = 1;
+switch($etat) {
+    case 0: echo "Le véhicule $marque $modele  est stoppé<br>"; break;
+    case 1: echo "Le véhicule $marque $modele démarre<br>"; break;
+    default: echo "Le véhicule $marque $modele  est stoppé<br>";
 }

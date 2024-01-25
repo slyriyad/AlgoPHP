@@ -1,4 +1,4 @@
-<h1>Exercice 11</h1>
+<h1>Exercice 12</h1>
 
 <p>La fonction var_dump($variable) permet d’afficher les informations d’une variable.
 Soit le tableau suivant :
