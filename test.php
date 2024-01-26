@@ -1,9 +1,14 @@
 <?php
 
-public function
-$etat = 1;
-switch($etat) {
-    case 0: echo "Le véhicule $marque $modele  est stoppé<br>"; break;
-    case 1: echo "Le véhicule $marque $modele démarre<br>"; break;
-    default: echo "Le véhicule $marque $modele  est stoppé<br>";
+$statut=0;
+$modele = "gzget";
+$marque = "fff";
+
+
+if($statut == 0) {
+    $resultat = $statut = 1;
+    $resultat = " démarre";
+} else {
+    $resultat = " est déjà démarré";
 }
+echo "Le véhicule $marque $modele $resultat" ;
