@@ -104,6 +104,7 @@ class Voiture
         echo $this->idVoiture . "<br>";
     }
 
+
     public function demarrer()
     {
         if ($this->statut == 0) {
@@ -139,6 +140,7 @@ class Voiture
         echo "Le véhicule " . $this->marque . " " . $this->modèle . "$resultat<br>";
     }
 
+
     public function ralentir(int $vitesse)
     {
         if ($this->statut == 0) {
@@ -150,10 +152,12 @@ class Voiture
         echo "Le véhicule " . $this->marque . " " . $this->modèle . " $result km / h<br<";
     }
 
+
     public function afficherVitesse()
     {
         echo "La vitesse du véhicule " . $this->marque . " " . $this->modèle . " est de : " . $this->vitesseActuelle . " km / h<br>";
     }
+
 
     public function etatvehicule()
     {
@@ -165,6 +169,7 @@ class Voiture
         return "Le véhicule " . $this->marque . " " . $this->modèle . "$resultat<br>";
     }
 
+    
     public function afficherinfo()
     {
         echo "Infos véhicule " . $this->idVoiture . "<br>
