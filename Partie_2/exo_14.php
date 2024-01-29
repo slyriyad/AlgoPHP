@@ -1,14 +1,14 @@
 <h1>Exercice 14</h1>
 
 <p>Créer une classe Voiture possédant 2 propriétés (marque et modèle) ainsi qu’une classe VoitureElec
-qui hérite (extends) de la classe Voiture et qui a une propriété supplémentaire (autonomie).
-Instancier une voiture « classique » et une voiture « électrique » ayant les caractéristiques
-suivantes :
-Peugeot 408 : $v1 = new Voiture("Peugeot","408");
-BMW i3 150 : $ve1 = new VoitureElec("BMW","I3",100);
-Votre programme de test devra afficher les informations des 2 voitures de la façon suivante :
-echo $v1->getInfos()."<br/>";
-echo $ve1->getInfos()."<br/>";
+    qui hérite (extends) de la classe Voiture et qui a une propriété supplémentaire (autonomie).
+    Instancier une voiture « classique » et une voiture « électrique » ayant les caractéristiques
+    suivantes :
+    Peugeot 408 : $v1 = new Voiture("Peugeot","408");
+    BMW i3 150 : $ve1 = new VoitureElec("BMW","I3",100);
+    Votre programme de test devra afficher les informations des 2 voitures de la façon suivante :
+    echo $v1->getInfos()."<br />";
+    echo $ve1->getInfos()."<br />";
 </p>
 
 <h2>Resultat</h2>
@@ -17,9 +17,9 @@ echo $ve1->getInfos()."<br/>";
 
 class Voiture
 {
-    private string $marque;
-    private string $modèle;
-    private int $idVoiture = 0 ;
+    protected string $marque;
+    protected string $modèle;
+    protected int $idVoiture = 0;
 
     private static $nbVehicules = 1;
 
@@ -36,42 +36,42 @@ class Voiture
 
     /**
      * Get the value of marque
-     */ 
+     */
     public function getMarque()
     {
-            return $this->marque;
+        return $this->marque;
     }
 
     /**
      * Set the value of marque
      *
      * @return  self
-     */ 
+     */
     public function setMarque($marque)
     {
-            $this->marque = $marque;
+        $this->marque = $marque;
 
-            return $this;
+        return $this;
     }
 
     /**
      * Get the value of modèle
-     */ 
+     */
     public function getModèle()
     {
-            return $this->modèle;
+        return $this->modèle;
     }
 
     /**
      * Set the value of modèle
      *
      * @return  self
-     */ 
+     */
     public function setModèle($modèle)
     {
-            $this->modèle = $modèle;
+        $this->modèle = $modèle;
 
-            return $this;
+        return $this;
     }
 
 
@@ -83,54 +83,59 @@ class Voiture
 
     public function afficherinfo()
     {
-    echo "<br>Infos véhicule " . $this->idVoiture . "<br>
+        echo "<br>Infos véhicule " . $this->idVoiture . "<br>
     ******************** <br>
-    Nom et modéle du véhicule : " . $this->marque . " " . $this->modèle."<br>" 
-    ;
+    Nom et modéle du véhicule : " . $this->marque . " " . $this->modèle . "<br>";
     }
 }
 
 
-Class VoitureElec extends Voiture 
+class VoitureElec extends Voiture
 {
     private int $autonomie;
 
-    public function __construct(string $marque, string $modèle,int $autonomie){
-        
-        parent::__construct($marque,$modèle);
-        $this->autonomie = $autonomie ;
+    public function __construct(string $marque, string $modèle, int $autonomie)
+    {
+
+        parent::__construct($marque, $modèle);
+        $this->autonomie = $autonomie;
     }
 
     /**
      * Get the value of autonomie
-     */ 
+     */
     public function getAutonomie()
     {
-            return $this->autonomie;
+        return $this->autonomie;
     }
 
     /**
      * Set the value of autonomie
      *
      * @return  self
-     */ 
+     */
     public function setAutonomie($autonomie)
     {
-            $this->autonomie = $autonomie;
+        $this->autonomie = $autonomie;
 
-            return $this;
+        return $this;
     }
 
     public function afficherinfo()
     {
-        echo parent::afficherinfo()."
-        l'autonomie du véhicule est de ".$this->autonomie."<br>";
+        echo parent::afficherinfo() . "
+        l'autonomie du véhicule est de " . $this->autonomie . "<br>";
     }
 
+    public function test()
+    {
+        return $this->marque . " et modèle " . $this->modèle;
+    }
 }
 
-$v1 = new Voiture("Peugeot","408");
-$v2 = new VoitureElec("BMW","I3",100);
+$v1 = new Voiture("Peugeot", "408");
+$v2 = new VoitureElec("BMW", "I3", 100);
 
 $v1->afficherinfo();
-$v2->afficherinfo();
+
+echo $v2->test();

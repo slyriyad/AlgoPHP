@@ -22,7 +22,7 @@ class Voiture
     private string $modèle;
     private int $nbPortes;
     private int $vitesseActuelle = 0;
-    private int $statut = 0;
+    private bool $statut = false;
     private int $idVoiture = 0;
 
     private static $nbVehicules = 1;
@@ -107,8 +107,8 @@ class Voiture
 
     public function demarrer()
     {
-        if ($this->statut == 0) {
-            $this->statut = 1;
+        if (!$this->statut) {
+            $this->statut = true;
             $resultat = " démarre";
         } else {
             $resultat = " est déjà démarré";
@@ -119,7 +119,7 @@ class Voiture
 
     public function accelerer(int $vitesse)
     {
-        if ($this->statut == 0) {
+        if (!$this->statut) {
             $result = " veut accélerer de $vitesse<br> Pour accélerer, il faut démarrer le vehiule" . $this->marque . " " . $this->modèle;
         } else {
             $this->vitesseActuelle += $vitesse;
@@ -131,8 +131,8 @@ class Voiture
 
     public function stopper()
     {
-        if ($this->statut == 1) {
-            $resultat = $this->statut = 0;
+        if ($this->statut) {
+            $this->statut = false;
             $resultat = " s'eteint";
         } else {
             $resultat = " est déjà eteint";
@@ -143,7 +143,7 @@ class Voiture
 
     public function ralentir(int $vitesse)
     {
-        if ($this->statut == 0) {
+        if (!$this->statut) {
             $result = " veut accélerer de $vitesse<br> Pour accélerer, il faut démarrer le vehiule" . $this->marque . " " . $this->modèle;
         } else {
             $this->vitesseActuelle -= $vitesse;
@@ -161,18 +161,18 @@ class Voiture
 
     public function etatvehicule()
     {
-        if ($this->statut == 1) {
+        if ($this->statut) {
             $resultat = " est démarré";
         } else {
             $resultat = " est eteint";
         }
-        return "Le véhicule " . $this->marque . " " . $this->modèle . "$resultat<br>";
+        return "Le véhicule " . $this->marque . " " . $this->modèle . "$resultat";
     }
 
-    
+
     public function afficherinfo()
     {
-        echo "Infos véhicule " . $this->idVoiture . "<br>
+        echo "<br>Infos véhicule " . $this->idVoiture . "<br>
         ******************** <br>
         Nom et modéle du véhicule : " . $this->marque . " " . $this->modèle . "<br>
         Nombre de portes : " . $this->nbPortes . "<br>"
@@ -181,12 +181,14 @@ class Voiture
     }
 }
 
-$peugeot = new Voiture("Peugeot", "408", "5");
+$peugeot = new Voiture("Peugeot", "408", 5);
 
 
 
-$citroën = new Voiture("Citroën", "C4", "3");
+$citroën = new Voiture("Citroën", "C4", 3);
 
 
 $peugeot->afficherinfo();
 $citroën->afficherinfo();
+
+$peugeot->afficherinfo();

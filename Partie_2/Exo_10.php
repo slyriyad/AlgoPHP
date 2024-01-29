@@ -1,10 +1,10 @@
 <h1>Exercice 10</h1>
 
 <p>En utilisant l’ensemble des fonctions personnalisées crées précédemment, créer un formulaire
-complet qui contient les informations suivantes : champs de texte avec nom, prénom, adresse email, ville, sexe et une liste de choix parmi lesquels on pourra sélectionner un intitulé de formation :
-« Développeur Logiciel », « Designer web », « Intégrateur » ou « Chef de projet ».
-Le formulaire devra également comporter un bouton permettant de le soumettre à un traitement
-de validation (submit).</p>
+    complet qui contient les informations suivantes : champs de texte avec nom, prénom, adresse email, ville, sexe et une liste de choix parmi lesquels on pourra sélectionner un intitulé de formation :
+    « Développeur Logiciel », « Designer web », « Intégrateur » ou « Chef de projet ».
+    Le formulaire devra également comporter un bouton permettant de le soumettre à un traitement
+    de validation (submit).</p>
 
 <h2>Resultat</h2>
 
@@ -18,9 +18,9 @@ function afficherInput($nomsInput)
 {
     $result = "<form>
     <ul>";
-    foreach ($nomsInput as $key => $info) {
-        $result .= 
-        "<li>
+    foreach ($nomsInput as $info) {
+        $result .=
+            "<li>
             <label for='$info'>$info&nbsp;:</label>
             <input type='text' id='$info' name='$info' />
         </li>";
@@ -40,7 +40,7 @@ function alimenterListeDeroulante($elements)
             <span>Civilité&nbsp;:</span>
         </label>
         <select id='civilité' name='usercivilité'>";
-    foreach ($elements as $key => $civilité) {
+    foreach ($elements as $civilité) {
         $result .= "<option value='$civilité'>$civilité</option>";
     }
 

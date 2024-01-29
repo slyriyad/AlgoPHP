@@ -5,6 +5,11 @@
 <h2>Resultat</h2>
 <?php
 
+// Déclaration d'une variable contenant une phrase
 $phrase = "Notre formation DL commence aujourd'hui";
-echo "l'ancienne phrase etait : $phrase <br>";
-echo "la nouvelle phrase est : ".str_replace("aujourd'hui", "demain", $phrase);
+
+// Affichage de l'ancienne phrase
+echo "l'ancienne phrase était : $phrase <br>";
+
+// Affichage de la nouvelle phrase en remplaçant "aujourd'hui" par "demain"
+echo "la nouvelle phrase est : " . str_replace("aujourd'hui", "demain", $phrase);
